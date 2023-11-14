@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                docker build -t stratcastor/task1jenk
+                docker build -t stratcastor/task1jenk .
                 '''
             }
 

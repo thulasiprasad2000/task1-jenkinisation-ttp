@@ -4,6 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
+                echo 'this is test message from Thulasi from jenkinsfile'
                 docker build -t thulasiprasad2000/task1jenk .
                 '''
             }

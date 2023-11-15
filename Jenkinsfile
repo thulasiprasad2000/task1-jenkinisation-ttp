@@ -21,8 +21,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                docker stop task1
-                docker rm task1
+                docker stop task1 && echo "stopped task1" || echo "task1 is not running"
+                docker rm task1 && echo "removed tasks1" || echo "task1 doesnot exist"
                 docker run -d -p 80:5500 --name task1 thulasiprasad2000/task1jenk
                 '''
             }

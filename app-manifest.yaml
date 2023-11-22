@@ -9,8 +9,11 @@ spec:
   - image: thulasiprasad2000/task1jenk
     name: task1
     env:
-      - name: YOUR_NAME
-        value: QA-Kubernetes
+    - name: YOUR_NAME
+      valueFrom:
+        secretKeyRef:
+          name: your-name
+          key: yourname
 ---
 apiVersion: v1
 kind: Service
